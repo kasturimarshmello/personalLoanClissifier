@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     <title>Home</title>
 </head>
 <body>
-    <h1>This is Home!</h1>
+    
+<div class="get-in-touch">
+    <h1 class="title">Enter Values!</h1>
+    <form action="{{ url_for('predict') }}" method="post" class="contact-form row">
+       <div class="form-field col-lg-6">
+          <input id="experience" name="experience" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="experience">Experience</label>
+       </div>
+       <div class="form-field col-lg-6 ">
+          <input id="income" name="income" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="income">Income</label>
+       </div>
+       <div class="form-field col-lg-6 ">
+          <input id="family" name="family" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="family">Family Members</label>
+       </div>
+        <div class="form-field col-lg-6 ">
+          <input id="ccavg" name="ccavg" class="input-text js-input" type="number" value=0 step=".1" required>
+          <label class="label" for="ccavg">CCAvg</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="edu" name="edu" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="edu">Education</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="mortgage" name="mortgage" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="mortgage">Mortgage</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="security" name="security" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="security">Securities Account</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="cd-acc" name="cd-acc" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="cd-acc">CD Account</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="online" name="online" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="online">Online</label>
+       </div>
+       <div class="form-field col-lg-6">
+          <input id="creditcard" name="creditcard" class="input-text js-input" type="number" value=0 required>
+          <label class="label" for="creditcard">CreditCard</label>
+       </div>
+       <div class="form-field col-lg-12">
+          <input class="submit-btn" type="submit" value="Submit">
+       </div>
+    </form>
+    <h2>{{prediction_text | safe}}</h2>
+   </div>
+
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
